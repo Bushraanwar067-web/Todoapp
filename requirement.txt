@@ -2,4 +2,4 @@ fastapi
 pydantic
 uvicorn
 pymongo
-dotenv
+python-dotenv
