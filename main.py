@@ -4,9 +4,12 @@
 
 from fastapi import FastAPI 
 from fastapi import Body
+
 from fastapi.middleware.cors import CORSMiddleware
+
 from pydantic import BaseModel
 from typing import List
+
 import os
 from pymongo import MongoClient
 
@@ -29,52 +32,6 @@ app.add_middleware(
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers
 )
-
-
-
-
-
-
-
-
-
-
-
-
-# load_dotenv()
-# app = FastAPI()
-
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-
-# DB = None
-# try:
-#     mongo_url = os.getenv("DATABASE_URL")
-#     db_name = os.getenv("DB_NAME")
-#     if not mongo_url or not db_name:
-#         raise ValueError("Missing DATABASE_URL or DB_NAME environment variable")
-#     client = MongoClient(mongo_url)
-#     DB = client[db_name]
-#     print("✅ MongoDB connected successfully")
-# except Exception as e:
-#     print("❌ MongoDB connection failed:", e)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Define the data model for a Todo item
@@ -167,8 +124,6 @@ def update_item_in_todo(item_id: str, done: bool = Body(...)):
 # 1. pip install fastapi uvicorn pydantic
 # 2. uvicorn main:app --reload
 # 3. Open http://127.0.0.1:8000/docs for interactive API documentation
-
-
 
 
 
